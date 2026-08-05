@@ -1,0 +1,98 @@
+🌍 What is CDN (Content Delivery Network)
+Definition
+
+CDN (Content Delivery Network) duniya bhar me maujood servers ka ek network hota hai jo static files (JavaScript, CSS, Images, Fonts, Videos, etc.) ko user ke nearest server se serve karta hai.
+
+Why do we need a CDN?
+
+Agar sari files sirf ek hi server par hongi, to:
+
+Door wale users ke liye website slow hogi.
+Ek server par bahut load aa jayega.
+Website down bhi ho sakti hai.
+
+CDN in problems ko solve karta hai.
+
+How it works
+User
+   │
+   ▼
+Nearest CDN Server
+   │
+   ▼
+React.js / CSS / Images
+
+Browser user ke sabse nearest CDN server se file download karta hai, isliye website jaldi load hoti hai.
+
+Example
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+
+Yaha React ki file hamare server se nahi, balki unpkg CDN se aa rahi hai.
+
+Advantages
+Faster loading
+Lower server load
+Better performance
+High availability
+Global delivery
+🌐 What is CrossOrigin?
+Definition
+
+crossorigin ek HTML attribute hai jo browser ko batata hai ki cross-origin request bhejte waqt credentials (cookies, authentication, etc.) bhejne hain ya nahi.
+
+What is Cross-Origin?
+
+Agar website aur resource alag origin se aaye, to usse Cross-Origin kehte hain.
+
+Example
+
+Website:
+
+https://mywebsite.com
+
+React CDN:
+
+https://unpkg.com
+
+Ye dono different origins hain.
+
+Why do we use crossorigin?
+
+Browser jab kisi dusri website se file download karta hai, tab uske paas ek choice hoti hai:
+
+Cookies bheje
+Ya cookies na bheje
+
+crossorigin isi behavior ko control karta hai.
+
+Common Value
+crossorigin="anonymous"
+
+Meaning:
+
+Resource download karo, lekin cookies ya credentials mat bhejo.
+
+Ye public CDNs (React, Bootstrap, Font Awesome, etc.) ke saath sabse common use hota hai.
+
+Another Value
+crossorigin="use-credentials"
+
+Meaning:
+
+Resource download karte waqt cookies aur authentication credentials bhi bhejo.
+
+Ye mostly private servers ya authenticated resources ke liye use hota hai.
+
+Example
+<script
+  src="https://unpkg.com/react@18/umd/react.production.min.js"
+  crossorigin="anonymous">
+</script>
+
+Yaha browser React download karega, lekin unpkg ko cookies nahi bhejega.
+
+📌 Difference
+CDN	CrossOrigin
+Batata hai file kahan se aayegi.	Batata hai request kaise bhejni hai.
+Performance improve karta hai.	Security aur credentials control karta hai.
+Nearest server se file serve karta hai.	Cookies/credentials bhejne ya na bhejne ka decision leta hai.
