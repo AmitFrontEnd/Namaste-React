@@ -6,12 +6,18 @@ class Classical extends Component {
 
     this.state = {
       count: 0,
-      count2: 0,
     };
+
+    console.log("constructor");
+  }
+
+  componentDidMount() {
+    console.log("mounted");
   }
   render() {
+    console.log("rendering");
     const { name } = this.props;
-    const { count, count2 } = this.state;
+    const { count } = this.state;
     return (
       <div>
         <h1>
@@ -24,14 +30,6 @@ class Classical extends Component {
           }}
         >
           Counter 1 Update button
-        </button>
-        <h1>Count2 is: {count2}</h1>
-        <button
-          onClick={() => {
-            this.setState({ count2: count2 + 1 });
-          }}
-        >
-          Counter 2 Update button
         </button>
       </div>
     );
