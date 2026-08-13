@@ -11,8 +11,10 @@ class Classical extends Component {
     console.log("constructor");
   }
 
-  componentDidMount() {
-    console.log("mounted");
+  async componentDidMount() {
+    const res = await fetch("https://api.github.com/users/AmitFrontEnd");
+    const data = await res.json();
+    console.log(data);
   }
   render() {
     console.log("rendering");
